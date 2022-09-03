@@ -35,6 +35,5 @@ def get_articles(address):
     return articles
 
 
-
 if __name__ == "__main__":
     get_articles(ADDRESS)
