@@ -66,7 +66,7 @@ def sorted_dict_keys(dictionary):
     return [key[0] for key in sorted_dict]
 
 
-element = {"a": 1, "b": 5, "c": 8, "d": 5, "e": 12, "f": 35, "g": 43, "h": 6}
+element = {"a": 1, "b": 5, "c": 8, "d": 5, "e": 12, "f": 3, "g": 43, "h": 6}
 
 
 if __name__ == "__main__":
