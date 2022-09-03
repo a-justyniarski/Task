@@ -1,8 +1,17 @@
 def swap_pair(lst, i, j):
+    '''
+    Function swaps two items in a list
+    '''
     lst[i], lst[j] = lst[j], lst[i]
 
 
 def shift_pair(lst, i, limit):
+    '''
+    Function creates heap from items in a list, with given limit
+    :param lst: list of tuples (key:value pair) created from dictionary
+    :param limit: length of the list
+    :return: True
+    '''
     while True:
         l, r = i*2+1, i*2+2
         if max(l, r) < limit:
@@ -28,9 +37,15 @@ def shift_pair(lst, i, limit):
                 break
         else:
             break
+    return True
 
 
 def dictionary_heapsort(lst):
+    '''
+    Heapsort of a given dictionary
+    :param lst:
+    :return: list of tuples (key:value pairs)
+    '''
     lst = list(lst.items())
     for j in range((len(lst)-2)//2, -1, -1):
         shift_pair(lst, j, len(lst))
@@ -42,11 +57,18 @@ def dictionary_heapsort(lst):
 
 
 def sorted_dict_keys(dictionary):
+    '''
+    Extracts sorted keys based on values from given dictionary
+    :param dictionary:
+    :return: list of sorted keys
+    '''
     sorted_dict = dictionary_heapsort(dictionary)
     return [key[0] for key in sorted_dict]
 
 
 element = {"a": 1, "b": 5, "c": 8, "d": 5, "e": 12, "f": 35, "g": 43, "h": 6}
 
-print(dictionary_heapsort(element))
-print(sorted_dict_keys(element))
+
+if __name__ == "__main__":
+    print(dictionary_heapsort(element))
+    print(sorted_dict_keys(element))
