@@ -2,6 +2,7 @@ import java.util.*;
 
 public class task_dictionary_quicksort {
 
+
     public static void main(String[] args) {
 
         HashMap<String, Integer> map = new HashMap<>();
@@ -16,8 +17,8 @@ public class task_dictionary_quicksort {
 
         System.out.println(map);
         System.out.println(quicksortConverted(map));
-
     }
+
 
     public static LinkedHashMap<String, Integer> quicksortConverted(HashMap<String, Integer> map) {
         List<Map.Entry<String, Integer>> list = new LinkedList<>(map.entrySet());
@@ -30,9 +31,10 @@ public class task_dictionary_quicksort {
         for (Map.Entry<String, Integer> aa : list) {
             convertedHashMap.put(aa.getKey(), aa.getValue());
         }
-        return convertedHashMap;
 
+        return convertedHashMap;
     }
+
 
     public static int partition (int l, int r, List<Map.Entry<String, Integer>> arrP) {
 
@@ -48,7 +50,6 @@ public class task_dictionary_quicksort {
                 arrP.set(pointer, temp);
                 pointer += 1;
             }
-
         }
 
         Map.Entry<String, Integer> temp = arrP.get(r);
@@ -58,6 +59,7 @@ public class task_dictionary_quicksort {
         return pointer;
     }
 
+
     public void quicksort (int l, int r, List<Map.Entry<String, Integer>> arrQ) {
 
         if(l<r) {
@@ -65,7 +67,5 @@ public class task_dictionary_quicksort {
             quicksort(l, pi-1, arrQ);
             quicksort(pi+1, r, arrQ);
         }
-
     }
-
 }

@@ -1,3 +1,8 @@
+ELEMENT = {"a": 6, "b": 5, "c": 8, "d": 5, "e": 12, "f": 3, "g": 43, "h": 1}
+
+
+# Quicksort function - body
+
 def partition(l, r, lst):
     """
     Sorts values smaller and greater than pivot value to left and right side of the pivot, accordingly.
@@ -38,6 +43,8 @@ def quicksort(l, r, lst):
     return lst
 
 
+# Quicksort - dictionary conversion
+
 def dict_quicksort(dictionary):
     """
     Transforms dictionary to list of tuples and using quicksort algorithm sorts items based on dictionary values.
@@ -58,8 +65,6 @@ def get_dict_keys_sorted(dictionary):
     return [key[0] for key in dict_quicksort(dictionary)]
 
 
-element = {"a": 6, "b": 5, "c": 8, "d": 5, "e": 12, "f": 3, "g": 43, "h": 1}
-
 if __name__ == '__main__':
-    print(dict_quicksort(element))
-    print(get_dict_keys_sorted(element))
+    print(dict_quicksort(ELEMENT))
+    print(get_dict_keys_sorted(ELEMENT))

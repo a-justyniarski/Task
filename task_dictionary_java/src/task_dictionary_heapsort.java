@@ -2,6 +2,7 @@ import java.util.*;
 
 public class task_dictionary_heapsort {
 
+
     public static void main(String[] args) {
 
         HashMap<String, Integer> map = new HashMap<>();
@@ -20,7 +21,9 @@ public class task_dictionary_heapsort {
 
     }
 
+
     public static LinkedHashMap<String, Integer> heapsortConverted(HashMap<String, Integer> map) {
+
         List<Map.Entry<String, Integer>> list = new LinkedList<>(map.entrySet());
 
         task_dictionary_heapsort heapsort = new task_dictionary_heapsort();
@@ -31,10 +34,13 @@ public class task_dictionary_heapsort {
         for (Map.Entry<String, Integer> aa : list) {
             convertedHashMap.put(aa.getKey(), aa.getValue());
         }
+
         return convertedHashMap;
     }
 
+
     public void sort (List<Map.Entry<String, Integer>> arr, int limit) {
+
         for (int i=limit/2-1; i>=0; i--) {
             heapify(arr, i, limit);
         }
@@ -46,6 +52,7 @@ public class task_dictionary_heapsort {
             heapify(arr,0, i);
         }
     }
+
 
     public void heapify(List<Map.Entry<String, Integer>> arr, int i, int limit) {
         int max_i = i;

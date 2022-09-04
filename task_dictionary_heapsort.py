@@ -1,3 +1,8 @@
+ELEMENT = {"a": 1, "b": 5, "c": 8, "d": 5, "e": 12, "f": 3, "g": 43, "h": 6}
+
+
+# Heapsort function - body
+
 def swap_pair(lst, i, j):
     """
     Function swaps two items in a list
@@ -47,6 +52,8 @@ def shift_pair(lst, i, limit):
     return True
 
 
+# Heapsort - dictionary conversion
+
 def dictionary_heapsort(lst):
     """
     Heapsort of a given dictionary
@@ -74,9 +81,6 @@ def sorted_dict_keys(dictionary):
     return [key[0] for key in sorted_dict]
 
 
-element = {"a": 1, "b": 5, "c": 8, "d": 5, "e": 12, "f": 3, "g": 43, "h": 6}
-
-
 if __name__ == "__main__":
-    print(dictionary_heapsort(element))
-    print(sorted_dict_keys(element))
+    print(dictionary_heapsort(ELEMENT))
+    print(sorted_dict_keys(ELEMENT))
