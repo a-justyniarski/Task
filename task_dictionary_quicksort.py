@@ -1,6 +1,6 @@
 def partition(l, r, lst):
     """
-
+    Sorts values smaller and greater than pivot value to left and right side of the pivot, accordingly.
     :param l: left boundary (initially 0)
     :param r: right boundary (initially last item of a dictionary)
     :param lst: list of items to part
@@ -19,6 +19,13 @@ def partition(l, r, lst):
 
 
 def quicksort(l, r, lst):
+    """
+    Quicksort algorithm. Calls partition method and recursively quicksort parted fragments of the list.
+    :param l: int (lower end of given list)
+    :param r: int (higher end of given list)
+    :param lst: list (list to sort)
+    :return: list (sorted list)
+    """
 
     if len(lst) == 1:
         return lst
@@ -32,16 +39,26 @@ def quicksort(l, r, lst):
 
 
 def dict_quicksort(dictionary):
+    """
+    Transforms dictionary to list of tuples and using quicksort algorithm sorts items based on dictionary values.
+    :param dictionary: dictionary
+    :return: list of tuples
+    """
     lst = list(dictionary.items())
     quicksort(0, len(lst) - 1, lst)
     return lst
 
 
 def get_dict_keys_sorted(dictionary):
+    """
+    Sorts dictionary by its values and returns sorted keys.
+    :param dictionary: dictionary
+    :return: list of tuples
+    """
     return [key[0] for key in dict_quicksort(dictionary)]
 
 
-element = {"a": 1, "b": 5, "c": 8, "d": 5, "e": 12, "f": 3, "g": 43, "h": 6}
+element = {"a": 6, "b": 5, "c": 8, "d": 5, "e": 12, "f": 3, "g": 43, "h": 1}
 
 if __name__ == '__main__':
     print(dict_quicksort(element))
