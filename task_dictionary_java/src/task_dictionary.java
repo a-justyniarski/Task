@@ -17,25 +17,21 @@ public class task_dictionary {
         map.put("h", 6);
 
 
-        task_dictionary sorting = new task_dictionary();
-
-        sorting.convert(map);
-
-
         System.out.println(map);
-
+        System.out.println(convert(map));
 
     }
 
-    public void convert(HashMap<String, Integer> map) {
-        List<Map.Entry<String, Integer>> list = new LinkedList<Map.Entry<String, Integer>>(map.entrySet());
+    public static LinkedHashMap<String, Integer> convert(HashMap<String, Integer> map) {
+        List<Map.Entry<String, Integer>> list = new LinkedList<>(map.entrySet());
 
         task_dictionary sorting = new task_dictionary();
         sorting.sort(list, list.size());
-        HashMap<String, Integer> temp = new LinkedHashMap<String, Integer>();
+        LinkedHashMap<String, Integer> temp = new LinkedHashMap<>();
         for (Map.Entry<String, Integer> aa : list) {
             temp.put(aa.getKey(), aa.getValue());
         }
+        return temp;
     }
 
     public void sort (List<Map.Entry<String, Integer>> arr, int limit) {
