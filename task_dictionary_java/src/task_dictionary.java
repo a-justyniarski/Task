@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Task_dictionary {
+public class task_dictionary {
 
     public static void main(String[] args) {
 
@@ -17,7 +17,7 @@ public class Task_dictionary {
         map.put("h", 6);
 
 
-        Task_dictionary sorting = new Task_dictionary();
+        task_dictionary sorting = new task_dictionary();
 
         sorting.convert(map);
 
@@ -30,7 +30,7 @@ public class Task_dictionary {
     public void convert(HashMap<String, Integer> map) {
         List<Map.Entry<String, Integer>> list = new LinkedList<Map.Entry<String, Integer>>(map.entrySet());
 
-        Task_dictionary sorting = new Task_dictionary();
+        task_dictionary sorting = new task_dictionary();
         sorting.sort(list, list.size());
         HashMap<String, Integer> temp = new LinkedHashMap<String, Integer>();
         for (Map.Entry<String, Integer> aa : list) {
