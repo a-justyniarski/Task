@@ -1,12 +1,10 @@
 import java.util.*;
 
-public class task_dictionary {
+public class task_dictionary_heapsort {
 
     public static void main(String[] args) {
 
-        int[] arr = {1,9,8,33,12,21,8,6};
-
-        HashMap<String, Integer> map = new HashMap<String, Integer>();
+        HashMap<String, Integer> map = new HashMap<>();
         map.put("a", 1);
         map.put("b", 9);
         map.put("c", 8);
@@ -18,20 +16,22 @@ public class task_dictionary {
 
 
         System.out.println(map);
-        System.out.println(convert(map));
+        System.out.println(heapsortConverted(map));
 
     }
 
-    public static LinkedHashMap<String, Integer> convert(HashMap<String, Integer> map) {
+    public static LinkedHashMap<String, Integer> heapsortConverted(HashMap<String, Integer> map) {
         List<Map.Entry<String, Integer>> list = new LinkedList<>(map.entrySet());
 
-        task_dictionary sorting = new task_dictionary();
-        sorting.sort(list, list.size());
-        LinkedHashMap<String, Integer> temp = new LinkedHashMap<>();
+        task_dictionary_heapsort heapsort = new task_dictionary_heapsort();
+
+        heapsort.sort(list, list.size());
+
+        LinkedHashMap<String, Integer> convertedHashMap = new LinkedHashMap<>();
         for (Map.Entry<String, Integer> aa : list) {
-            temp.put(aa.getKey(), aa.getValue());
+            convertedHashMap.put(aa.getKey(), aa.getValue());
         }
-        return temp;
+        return convertedHashMap;
     }
 
     public void sort (List<Map.Entry<String, Integer>> arr, int limit) {
@@ -60,7 +60,6 @@ public class task_dictionary {
         if (l<limit && arr.get(l).getValue()>arr.get(max_i).getValue()) {
 
             max_i = l;
-
         }
 
         if (max_i!=i) {
@@ -70,10 +69,7 @@ public class task_dictionary {
             arr.set(max_i, temp);
 
             heapify(arr, max_i, limit);
-
         }
-
     }
-
 }
 
