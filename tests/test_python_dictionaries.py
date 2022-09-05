@@ -6,6 +6,8 @@ PARAMETERS = 'dictionary'
 # Dictionaries: Already sorted, sorted reverse, with two values repeated n-times, duplicate of dictionary,
 # dictionary with same value, duplicated keys with updated values. I do not check stability of sort algorithms.
 DICTIONARY = (
+    ({"a": 'a', "b": 'b', "c": 'c', "d": 'd', "e": 'e', "f": 'f', "g": 'g', "h": 'h'}),
+    ({"a": 'h', "b": 'g', "c": 'f', "d": 'e', "e": 'd', "f": 'c', "g": 'b', "h": 'a'}),
     ({"a": 1, "b": 2, "c": 3, "d": 4, "e": 5, "f": 6, "g": 7, "h": 8}),
     ({"a": 6, "b": 5, "c": 8, "d": 5, "e": 6, "f": 5, "g": 43, "h": 1}),
     ({"a": 6, "b": 5, "c": 6, "d": 5, "e": 6, "f": 5, "g": 6, "h": 5}),

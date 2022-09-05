@@ -18,6 +18,7 @@ public class task_dictionary_heapsort {
 
         System.out.println(map);
         System.out.println(heapsortConverted(map));
+        System.out.println(keyListSortedHeapsort(map));
 
     }
 
@@ -38,6 +39,16 @@ public class task_dictionary_heapsort {
         return convertedHashMap;
     }
 
+
+    public static ArrayList<String> keyListSortedHeapsort (HashMap<String, Integer> map) {
+        ArrayList<String> keyListSorted = new ArrayList<>();
+        LinkedHashMap<String, Integer> sortedMap = heapsortConverted(map);
+        Iterator<Map.Entry<String, Integer>> iterator = sortedMap.entrySet().iterator();
+        while(iterator.hasNext()){
+            keyListSorted.add(iterator.next().getKey());
+        }
+        return keyListSorted;
+    }
 
     public void sort (List<Map.Entry<String, Integer>> arr, int limit) {
 

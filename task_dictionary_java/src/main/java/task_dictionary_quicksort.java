@@ -5,18 +5,21 @@ public class task_dictionary_quicksort {
 
     public static void main(String[] args) {
 
-        HashMap<String, Integer> map = new HashMap<>();
-        map.put("a", 1);
-        map.put("b", 9);
-        map.put("c", 8);
-        map.put("d", 33);
-        map.put("e", 12);
-        map.put("f", 21);
-        map.put("g", 8);
-        map.put("h", 6);
+        HashMap<String, Integer> map = new HashMap<String, Integer>() {{
+            put("a", 1);
+            put("b", 9);
+            put("c", 8);
+            put("d", 33);
+            put("e", 12);
+            put("f", 21);
+            put("g", 8);
+            put("h", 6);
+        }};
+
 
         System.out.println(map);
         System.out.println(quicksortConverted(map));
+        System.out.println(keyListSortedQuicksort(map));
     }
 
 
@@ -33,6 +36,16 @@ public class task_dictionary_quicksort {
         }
 
         return convertedHashMap;
+    }
+
+    public static ArrayList<String> keyListSortedQuicksort (HashMap<String, Integer> map) {
+        ArrayList<String> keyListSorted = new ArrayList<>();
+        LinkedHashMap<String, Integer> sortedMap = quicksortConverted(map);
+        Iterator<Map.Entry<String, Integer>> iterator = sortedMap.entrySet().iterator();
+        while(iterator.hasNext()){
+            keyListSorted.add(iterator.next().getKey());
+        }
+        return keyListSorted;
     }
 
 
