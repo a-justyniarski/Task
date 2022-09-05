@@ -45,7 +45,7 @@ def quicksort(l, r, lst):
 
 # Quicksort - dictionary conversion
 
-def dict_quicksort(dictionary):
+def dictionary_quicksort(dictionary):
     """
     Transforms dictionary to list of tuples and using quicksort algorithm sorts items based on dictionary values.
     :param dictionary: dictionary
@@ -56,15 +56,15 @@ def dict_quicksort(dictionary):
     return lst
 
 
-def get_dict_keys_sorted(dictionary):
+def get_dict_keys_sorted_quicksort(dictionary):
     """
     Sorts dictionary by its values and returns sorted keys.
     :param dictionary: dictionary
     :return: list of tuples
     """
-    return [key[0] for key in dict_quicksort(dictionary)]
+    return [key[0] for key in dictionary_quicksort(dictionary)]
 
 
 if __name__ == '__main__':
-    print(dict_quicksort(ELEMENT))
-    print(get_dict_keys_sorted(ELEMENT))
+    print(dictionary_quicksort(ELEMENT))
+    print(get_dict_keys_sorted_quicksort(ELEMENT))

@@ -71,7 +71,7 @@ def dictionary_heapsort(lst):
     return lst
 
 
-def sorted_dict_keys(dictionary):
+def get_dict_keys_sorted_heapsort(dictionary):
     """
     Extracts sorted keys based on values from given dictionary
     :param dictionary:
@@ -83,4 +83,4 @@ def sorted_dict_keys(dictionary):
 
 if __name__ == "__main__":
     print(dictionary_heapsort(ELEMENT))
-    print(sorted_dict_keys(ELEMENT))
+    print(get_dict_keys_sorted_heapsort(ELEMENT))
